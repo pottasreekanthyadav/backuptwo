@@ -1,0 +1,59 @@
+<h3>Performing Curd Operations Using HttpClient Service</h3>
+<hr><hr>
+<input type="text" [(ngModel)]="s1" name="" placeholder="Enter Dep Number">
+<input type="text" [(ngModel)]="s2" name="" placeholder="Enter Name">
+<input type="text" [(ngModel)]="s3" name="" placeholder="Enter Age">
+<input type="text" [(ngModel)]="s4" name="" placeholder="Enter Ur Location">
+
+<br><br>
+<input type="button" value="GetDepts" (click)="f1();" name="">
+<input type="button" value="Add Dep" (click)="f2();" name="">
+<input type="button" value="Update" (click)="f5();" name="">
+
+<br><br>
+
+
+<table border="2" >
+	<tr>
+		<th>Depno</th>
+		<th>Dname</th>
+		<th>Loc</th>
+		<th></th>
+	</tr>
+	<tr *ngFor="let item  of ar">
+		<td>{{item.depno}}</td>
+		<td>{{item.name}}</td>
+		<td>{{item.age}}</td>
+		<td>{{item.Loc}}</td>
+		<td>
+		<input type="button" (click)="f3(item.depno)" value="Remove" name=""> ||	
+		<input type="button" (click)="f4(item.depno)" value="Select" name="">	
+		</td>
+	</tr>
+	
+</table>
+
+
+
+<hr>
+<hr><hr>
+<h1>Live Data From W3School.com</h1>
+<!-- https://www.w3schools.com/angular/customers.php -->
+
+		<input type="button" (click)="wschool()" value="Select" name="">	
+
+
+
+		<table border="2">
+			<tr>
+				<th>Name</th>
+				<th>City</th>
+				<th>Country</th>
+			</tr>
+			<tr *ngFor="let item of cus.records">
+				<td>{{item.Name}}</td>
+				<td>{{item.City}}</td>
+				<td>{{item.Country}}</td>
+			</tr>
+			
+		</table>

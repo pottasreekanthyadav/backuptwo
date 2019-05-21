@@ -1,0 +1,24 @@
+Enter Minimum value:<input type="range" [(ngModel)]="min" min="0" max="3000" name="">
+<br>
+
+Enter Minimum value:<input type="range" [(ngModel)]="max" max="10000" min="3100" name="">
+<br>
+
+
+<h1>{{min}}</h1>
+<h1>{{max}}</h1>
+<table border="2">
+	<tr>
+		
+		<th>Empname</th>
+		<th>Salary</th>
+	</tr>
+	<tr *ngFor="let item of emp|range:min:max">
+		
+		<td>{{item.ename}}</td>
+		<td>{{item.salary}}</td>
+	</tr>
+	
+</table>
+<br>
+<hr><hr>

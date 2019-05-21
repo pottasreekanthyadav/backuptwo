@@ -1,0 +1,37 @@
+<style type="text/css">
+	.c1{
+		color: red;
+	}
+</style>
+<h3>Angular Form Validation</h3>
+<hr>
+
+<form #form="ngForm">
+	
+First Name:<input type="text"  name="fname"  #t1="ngModel" required="true"  [(ngModel)]="fname">
+
+
+<span class="c1" *ngIf="t1.invalid && t1.dirty">Please Enter Your First Name </span><br>
+	
+Last Name:<input type="text"  name="lname"  #t2="ngModel" required="true"  [(ngModel)]="lname">
+
+
+<span class="c1" *ngIf="t2.invalid && t2.dirty">Please Enter Last Name </span><br>
+
+City Name:<input type="text"  name="city"  #t3="ngModel" minlength="5" maxlength="15"  [(ngModel)]="city">
+
+
+<span class="c1" *ngIf="t3.invalid && t3.dirty">Minmum and Maximum 5 and 15 only</span><br>
+
+Enter Email:<input type="text" name="email" email="true" #t4="ngModel" [(ngModel)]="email">
+<span class="c1" *ngIf="t4.invalid && t4.dirty">Valid Email Address</span><br>
+
+PinCode:<input type="text" name="pincode" name="pincode" pattern="\d{6}"  #t5="ngModel" [(ngModel)]="pincode">
+<span class="c1" *ngIf="t5.invalid && t5.dirty">PinCode has 6 digits only</span>
+<input type="button"  (click)="f1()" [disabled]="form.invalid" value="Register" name="bu">
+
+</form>
+
+
+
+

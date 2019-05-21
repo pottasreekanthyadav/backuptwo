@@ -1,0 +1,51 @@
+<h3>Transfporming data in angular 6</h3>
+<div style="border: 2px solid blue;padding: 5px;font-size: 20px">
+	Student id:{{sid}}<br>
+	Student Name:{{sname|titlecase}}<br>
+	Course Name:{{course|uppercase}}<br>
+	EmailId:{{email|lowercase}}<br>
+	JoinDdate:{{joindata|date:"dd-mm-yy"}}<br>
+	Course Fee:{{fee|currency:"Rs."}}
+	
+</div>
+<hr>
+<hr><hr>
+<select [(ngModel)]="n">
+	<option>5</option>
+	<option>10</option>
+	<option>15</option>
+	<option value="{{students.length}}">All</option>
+	
+</select><br><br>
+<table border="2">
+	<tr>
+		<th>Sno</th>
+		<th>Student Name</th>
+		<th>Student City</th>
+	</tr>
+	<tr *ngFor="let item of students|slice:0:n;index as i">
+		<td>{{i}}</td>
+		<td>{{item.sname}}</td>
+		<td>{{item.city}}</td>
+		
+	</tr>
+</table>
+<hr><hr><hr>
+
+
+
+<table border="2">
+	<tr>
+		<th>Sno</th>
+		<th>Student Name</th>
+		<th>Student City</th>
+	</tr>
+	<tr  *ngFor="let item of students| slice:x:y; let y=index;" >
+		<td>{{y}}</td>
+		<td>{{item.sname}}</td>
+		<td>{{item.city}}</td>
+
+	</tr>
+</table>
+<br>
+		<button (click)="f1(y)">Next</button>

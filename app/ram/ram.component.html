@@ -1,0 +1,20 @@
+<p>
+  ram works!
+</p>
+<h1>test sai</h1>
+<h3>Angular 6 Application Deveelopment</h3>
+<hr>
+<h3>Student Details</h3>
+
+<table border="2">
+	<tr>
+		<th>S.NO</th>
+		<th>Student Name</th>
+		<th>Course Name</th>
+	</tr>
+	<tr *ngFor="let item of ar;let i=index">
+		<td>{{i}}</td>
+		<td>{{item.sname}}</td>
+		<td>{{item.course}}</td>
+	</tr>
+</table>

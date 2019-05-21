@@ -1,0 +1,23 @@
+<h3>Event Binding in Angular 6</h3>
+<hr>
+<input type="text" [(ngModel)]="s1" placeholder="Student Name" name=""><br>
+<input type="text" [(ngModel)]="s2" placeholder="Student Coures" name=""><br>
+<input type="button" (click)="f1()" value="Add Student" name="">
+<input type="button" (click)="f3()" value="Remove" name="">
+<input type="button" (click)="f5()" value="Update" name="">
+<hr><hr>
+<table border="2">
+	<tr>
+		<th>Sno</th>
+		<th>Student Name</th>
+		<th>Course Name</th>
+		<th></th>
+	</tr>
+	<tr *ngFor="let items of students;let i=index">
+		<td>{{i+1}}</td>
+		<td>{{items.sname}}</td>
+		<td>{{items.course}}</td>
+		<th><button (click)="f2(i)">Remove</button></th>
+		<th><button (click)="f4(i)">Select</button></th>
+	</tr>
+</table>
